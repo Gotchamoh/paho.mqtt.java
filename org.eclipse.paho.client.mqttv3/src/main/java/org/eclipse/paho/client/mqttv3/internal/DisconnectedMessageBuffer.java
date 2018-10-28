@@ -125,4 +125,5 @@ public class DisconnectedMessageBuffer implements Runnable {
 		return bufferOpts.isPersistBuffer();
 	}
 
+	public boolean isPublishBufferFirst(){ return bufferOpts.isPublishBufferFirst(); }
 }
