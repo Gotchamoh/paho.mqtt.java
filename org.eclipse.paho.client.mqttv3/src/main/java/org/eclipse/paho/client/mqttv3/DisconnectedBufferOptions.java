@@ -31,11 +31,13 @@ public class DisconnectedBufferOptions {
 	public static final boolean PERSIST_DISCONNECTED_BUFFER_DEFAULT = false;
 	
 	public static final boolean DELETE_OLDEST_MESSAGES_DEFAULT = false;
+	public static final boolean PUBLISH_BUFFER_FIRST_DEFAULT = true;
 	
 	private int bufferSize = DISCONNECTED_BUFFER_SIZE_DEFAULT;
 	private boolean bufferEnabled = DISCONNECTED_BUFFER_ENABLED_DEFAULT;
 	private boolean persistBuffer = PERSIST_DISCONNECTED_BUFFER_DEFAULT;
 	private boolean deleteOldestMessages = DELETE_OLDEST_MESSAGES_DEFAULT;
+	private boolean publishBufferFirst = PUBLISH_BUFFER_FIRST_DEFAULT;
 	
 	/**
 	 * Constructs a new <code>DisconnectedBufferOptions</code> object using the
@@ -88,4 +90,10 @@ public class DisconnectedBufferOptions {
 	public void setDeleteOldestMessages(boolean deleteOldestMessages) {
 		this.deleteOldestMessages = deleteOldestMessages;
 	}
+
+	public void setPublishBufferFirst(boolean publishBufferFirst){
+		this.publishBufferFirst = publishBufferFirst;
+	}
+
+	public boolean isPublishBufferFirst(){ return publishBufferFirst; }
 }

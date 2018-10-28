@@ -176,7 +176,7 @@ public class ClientComms {
 		if (isConnected() ||
 				(!isConnected() && message instanceof MqttConnect) ||
 				(isDisconnecting() && message instanceof MqttDisconnect)) {
-			if(disconnectedMessageBuffer != null && disconnectedMessageBuffer.getMessageCount() != 0){
+			if(disconnectedMessageBuffer != null && disconnectedMessageBuffer.getMessageCount() != 0 && disconnectedMessageBuffer.isPublishBufferFirst()){
 				//@TRACE 507=Client Connected, Offline Buffer available, but not empty. Adding message to buffer. message={0}
 				log.fine(CLASS_NAME, methodName, "507", new Object[] {message.getKey()});
 				if(disconnectedMessageBuffer.isPersistBuffer()){
